@@ -378,10 +378,18 @@ void computerTurn() {
     if (!targetCell.isHit()) {
       boolean hit = targetCell.attack();
       println("Computer Attacks: [" + row + " , " + col + "]: " + (hit ? "Hit!" : "Miss!"));
+      //if(hit)
+      //  println("Target Cell: " + targetCell.getShip().toString()); //<>//
 
       if (hit && targetCell.getShip().isSunk()) {
         println("Computer sunk your: " + targetCell.getShip().getName() + "!");
         player_ships_remain--;
+        for(Ship ship : player_armada) {
+          println(ship.toString());
+        }
+        for(Ship ship : computer_armada) {
+          println(ship.toString());
+        }
         if (player_ships_remain <= 0) {
           println("DEFEAT! COMPUTER REIGNS VICTORIOUS!");
         }

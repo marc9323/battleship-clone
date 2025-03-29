@@ -22,6 +22,10 @@ public class Ship {
   ++hits; 
  }
  
+ public int getHits() {
+  return hits; 
+ }
+ 
  public boolean isSunk() {
    println("Hits:  " + hits);
   return hits >= size;
@@ -33,6 +37,12 @@ public class Ship {
  
  public int getSize() {
   return this.size; 
+ }
+ 
+ public String toString() {
+   String shipString = "Type: " + getName() + " Size: " + getSize() + " Hits: " + getHits() + " Sunk: " + isSunk();
+   
+   return shipString;
  }
  
 }
